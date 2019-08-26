@@ -1,0 +1,28 @@
+.input-field{
+    position: relative;
+
+    input{
+        position: relative;
+        border: 2px solid #ff9800;
+        padding: 15px;
+        color: #e2e2e2;
+        font-size: 14px;
+        border-radius: 5px;
+        outline: none;
+        height: 10px;
+        transition: all 0.2s;
+        cursor: text;
+    }
+
+    label{
+        position: absolute;
+        padding: 0px 4px;
+        color: #ff9800;
+        width: calc(auto + 20px);
+        top: -10px;
+        left: 9px;
+        text-align: center;
+        background-color: #fff;
+    }
+
+}
