@@ -1,0 +1,18 @@
+button{
+    padding: 15px;
+    width: 250px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+
+    &.success{
+        background-color: #76cb00;
+    }
+
+    &.alert{
+        background-color: #ff9800;
+    }
+}
