@@ -15,6 +15,11 @@ export default function(state = INIT_STATE, action){
                 ...state,
                  members: state.members.filter(item  => item.id !== action.payload)
             }
+        case "MEMBER_CHANGED":
+            return {
+                ...state,
+                ...state.members[action.payload.id-1] = action.payload
+            }
         default:
             return state
     }

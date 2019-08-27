@@ -12,3 +12,11 @@ export function removeMember(id){
         payload: id
     }
 }
+
+
+export function updateMember(member){
+    return{
+        type: "MEMBER_CHANGED",
+        payload: member
+    }
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Edit.scss'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { removeMember } from '../../redux/Members/MemberAction'
+import { updateMember } from '../../redux/Members/MemberAction'
 import Input, { Select } from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 
@@ -21,29 +21,22 @@ function Edit(props){
 
     function handleCancel(e){
         e.preventDefault()
+        setName(user.name)
+        setEmail(user.email)
+        setDepartment(user.department)
+        setAccess(user.access)
     }
 
     function handleForm(e){
         e.preventDefault()
-        let id = verifyId()
-        props.addMember({
-            id,
+        props.updateMember({
+            id: user.id,
             name,
             email,
             department,
             access
         })
     }
-
-    function verifyId(){
-        let lastMember = props.members.reverse()
-        if(lastMember.length === 0){
-            return 1
-        }else{
-            return lastMember[0].id + 1
-        }
-    }
-
 
     return(
         <div className="container-edit">
@@ -76,7 +69,7 @@ const mapStateToProps = state => ({
     members: state.member.members,
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({ removeMember },dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ updateMember },dispatch)
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(Edit)
