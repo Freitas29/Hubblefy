@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Card from '../../components/Card/Card'
-import { removeMember } from '../../redux/Members/MemberAction.js'
+import { removeMember } from '../../redux/Members/MemberAction'
 
 
 function Main(props){
@@ -20,7 +20,7 @@ function Main(props){
                 <div className="members-list">
                     {props.members.length >= 1 && props.members.map(member => (
                         <Card
-                        key={member.name}
+                        key={member.id}
                         name={member.name}
                         access={member.access}
                         id={member.id}
