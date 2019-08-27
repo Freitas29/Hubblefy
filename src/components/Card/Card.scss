@@ -18,6 +18,21 @@
         color: #7a7774 !important;
     }
 
+    button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+        width: auto;
+        border-radius: auto;
+        outline: none;
+        border: none;
+        color: #fff;
+        font-size: auto;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
     .close{
         color: red;
         text-align: center;

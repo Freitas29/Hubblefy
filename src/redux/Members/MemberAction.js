@@ -4,3 +4,11 @@ export function addMember(member){
         payload: member
     }
 }
+
+
+export function removeMember(id){
+    return{
+        type: "REMOVE_MEMBER_CHANGED",
+        payload: id
+    }
+}

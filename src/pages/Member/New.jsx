@@ -31,7 +31,6 @@ function New(props){
 
     function verifyId(){
         let lastMember = props.members.reverse()
-        debugger
         if(lastMember.length === 0){
             return 1
         }else{

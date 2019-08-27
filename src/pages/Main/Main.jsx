@@ -4,8 +4,9 @@ import Button from '../../components/Button/Button'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { addMember } from '../../redux/Members/MemberAction'
 import Card from '../../components/Card/Card'
+import { removeMember } from '../../redux/Members/MemberAction.js'
+
 
 function Main(props){
     return(
@@ -22,6 +23,7 @@ function Main(props){
                         key={member.name}
                         name={member.name}
                         access={member.access}
+                        id={member.id}
                         />
                     ))}
                 </div>
@@ -45,9 +47,9 @@ function Main(props){
 
 const mapStateToProps = state => ({
     members: state.member.members,
-    value: state.member.value
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({addMember},dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ removeMember },dispatch)
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(Main)
