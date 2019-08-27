@@ -25,10 +25,6 @@ function New(props){
             department,
             access
         })
-        console.log("nome",name)
-        console.log("email",email)
-        console.log("Departamento",department)
-        console.log("Nivel", access)
     }
 
     return(
