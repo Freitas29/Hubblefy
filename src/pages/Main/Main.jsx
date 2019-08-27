@@ -2,8 +2,11 @@ import React from 'react'
 import './Main.scss'
 import Button from '../../components/Button/Button'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { addMember } from '../../redux/Members/MemberAction'
 
-export default function Main(){
+function Main(props){
     return(
         <div className="container-main">
             <div className="info">
@@ -22,3 +25,11 @@ export default function Main(){
         </div>
     )
 }
+
+const mapStateToProps = state => ({
+    members: state.member.members,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({addMember},dispatch)
+
+export default connect(mapStateToProps,mapDispatchToProps)(Main)
