@@ -15,6 +15,18 @@ function Main(props){
                     primeiros membros da sua nova org:
                 </p>
 
+                <div className="members-list">
+                    <div className="card-member">
+                        <p className="card-name">Nome:</p>
+                        <label className="level-access">Admin</label>
+                        <label className="close">&times;</label>
+                    </div>
+                </div>
+
+                {/* {props.members.length >= 1 && props.members.map(member => (
+                    <p>{member.name}</p>
+                ))} */}
+
                 <div className="actions">
                     <Link to="member/new">
                         <Button type="success" value="Adicionar Membro"/>
@@ -23,7 +35,9 @@ function Main(props){
                     <Button type="alert" value="Ir para Org" />
                     :
                     <Button type="alert" value="Enviar Convites" />
+                    
                     }
+
                 </div>
             </div>
         </div>
@@ -32,6 +46,7 @@ function Main(props){
 
 const mapStateToProps = state => ({
     members: state.member.members,
+    value: state.member.value
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({addMember},dispatch)
