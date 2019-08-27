@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import './New.scss'
 import Input, { Select } from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { addMember } from '../../redux/Members/MemberAction'
 
-export default function New(){
+function New(props){
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -16,6 +19,12 @@ export default function New(){
 
     function handleForm(e){
         e.preventDefault()
+        props.addMember({
+            name,
+            email,
+            department,
+            access
+        })
         console.log("nome",name)
         console.log("email",email)
         console.log("Departamento",department)
@@ -50,3 +59,10 @@ export default function New(){
     )
 }
 
+const mapStateToProps = state => ({
+    members: state.member.members,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({addMember},dispatch)
+
+export default connect(mapStateToProps,mapDispatchToProps)(New)

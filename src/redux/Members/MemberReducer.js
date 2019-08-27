@@ -1,5 +1,6 @@
 const INIT_STATE = {
     members: [],
+    value: '',
 }
 
 
@@ -8,7 +9,7 @@ export default function(state = INIT_STATE, action){
         case 'ADD_MEMBER_CHANGED':
             return{
                 ...state,
-                ...state.members.push(action.payload)
+                ...state.members.push(action.payload) 
             }
         default:
             return state
