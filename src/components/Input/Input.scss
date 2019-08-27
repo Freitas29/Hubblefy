@@ -6,12 +6,17 @@
         border: 2px solid #ff9800;
         padding: 15px;
         color: #e2e2e2;
-        font-size: 14px;
+        font-size: 16px;
         border-radius: 5px;
         outline: none;
         height: 10px;
         transition: all 0.2s;
         cursor: text;
+        font-weight: bold;
+    }
+
+    input::placeholder{
+        color: #e2e2e2;
     }
 
     label{
@@ -25,4 +30,20 @@
         background-color: #fff;
     }
 
+    select{
+        background-color: #fff;
+        position: relative;
+        border: 2px solid #ff9800;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        outline: none;
+        height: auto;
+        transition: all 0.2s;
+        cursor: text;
+        font-weight: bold;
+        min-width: 100%;
+        color: #e2e2e2;
+
+    }
 }
