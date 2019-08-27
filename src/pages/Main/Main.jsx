@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addMember } from '../../redux/Members/MemberAction'
+import Card from '../../components/Card/Card'
 
 function Main(props){
     return(
@@ -16,16 +17,14 @@ function Main(props){
                 </p>
 
                 <div className="members-list">
-                    <div className="card-member">
-                        <p className="card-name">Nome:</p>
-                        <label className="level-access">Admin</label>
-                        <label className="close">&times;</label>
-                    </div>
+                    {props.members.length >= 1 && props.members.map(member => (
+                        <Card
+                        key={member.name}
+                        name={member.name}
+                        access={member.access}
+                        />
+                    ))}
                 </div>
-
-                {/* {props.members.length >= 1 && props.members.map(member => (
-                    <p>{member.name}</p>
-                ))} */}
 
                 <div className="actions">
                     <Link to="member/new">

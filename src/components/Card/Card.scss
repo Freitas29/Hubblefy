@@ -1,0 +1,27 @@
+.card-member{
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    align-items: center;
+    justify-items: flex-start;
+    background-color: #f013001c;
+    border-radius: 5px;
+
+    .card-name{
+        text-align: end;
+        color: #646464 !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+    }
+
+    .level-access{
+        font-size: 14px !important;
+        color: #7a7774 !important;
+    }
+
+    .close{
+        color: red;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 100;
+    }
+}
