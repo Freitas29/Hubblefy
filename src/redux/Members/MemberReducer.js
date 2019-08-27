@@ -1,7 +1,5 @@
 const INIT_STATE = {
-    members: [ {
-        nome: "Meu cu"
-    }],
+    members: [],
 }
 
 

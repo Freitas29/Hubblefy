@@ -19,7 +19,11 @@ function Main(props){
                     <Link to="member/new">
                         <Button type="success" value="Adicionar Membro"/>
                     </Link>
+                    {props.members.length === 0 ? 
                     <Button type="alert" value="Ir para Org" />
+                    :
+                    <Button type="alert" value="Enviar Convites" />
+                    }
                 </div>
             </div>
         </div>
