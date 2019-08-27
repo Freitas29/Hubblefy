@@ -8,7 +8,7 @@ export default function New(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [department, setDepartment] = useState('')
-    const [acess, setAccess] = useState('')
+    const [access, setAccess] = useState('Usuario')
     
     function handleCancel(e){
         e.preventDefault()
@@ -16,6 +16,10 @@ export default function New(){
 
     function handleForm(e){
         e.preventDefault()
+        console.log("nome",name)
+        console.log("email",email)
+        console.log("Departamento",department)
+        console.log("Nivel", access)
     }
 
     return(
@@ -27,11 +31,11 @@ export default function New(){
                     </p>
              </div>
             <form>
-                <Input value={name} type="text" label="Nome" holder="ex. Erin Green"/>
-                <Input value={email} type="email" label="E-mail" holder="ex. e.green@company.now"/>
-                <Input value={department} type="text" label="Departamento" holder="ex. Tech"/>
+                <Input value={name} type="text" label="Nome" holder="ex. Erin Green" onChange={e => setName(e.target.value)}/>
+                <Input value={email} type="email" label="E-mail" holder="ex. e.green@company.now" onChange={e => setEmail(e.target.value)}/>
+                <Input value={department} type="text" label="Departamento" holder="ex. Tech" onChange={e => setDepartment(e.target.value)}/>
                 
-                <Select value={acess} label="Nível de acesso" onChange={e => setAccess(e.target.value)}>
+                <Select value={access} label="Nível de accesso" onChange={e => setAccess(e.target.value)}>
                     <option value="user" defaultValue>Usuário</option>
                     <option value="leitor">Leitor</option>
                     <option value="admin">Admin</option>
