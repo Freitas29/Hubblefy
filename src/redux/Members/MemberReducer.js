@@ -1,6 +1,5 @@
 const INIT_STATE = {
     members: [],
-    value: '',
 }
 
 

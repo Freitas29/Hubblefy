@@ -19,12 +19,24 @@ function New(props){
 
     function handleForm(e){
         e.preventDefault()
+        let id = verifyId()
         props.addMember({
+            id,
             name,
             email,
             department,
             access
         })
+    }
+
+    function verifyId(){
+        let lastMember = props.members.reverse()
+        debugger
+        if(lastMember.length === 0){
+            return 1
+        }else{
+            return lastMember[0].id + 1
+        }
     }
 
     return(
