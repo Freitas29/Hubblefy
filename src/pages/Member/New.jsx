@@ -5,6 +5,8 @@ import Button from '../../components/Button/Button'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addMember } from '../../redux/Members/MemberAction'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function New(props){
 
@@ -15,11 +17,26 @@ function New(props){
     
     function handleCancel(e){
         e.preventDefault()
+        props.history.push("/")
     }
 
     function handleForm(e){
         e.preventDefault()
         let id = verifyId()
+        
+        let errors = verifyForm()
+        
+        if(errors.length === 0){
+            saveData(id,name,email,department,access)
+            props.history.push("/")
+        }else{
+            errors.map(error => (
+                notify(error)
+            ))
+        }
+    }
+
+    function saveData(id,name,email,department,access){
         props.addMember({
             id,
             name,
@@ -28,6 +45,20 @@ function New(props){
             access
         })
     }
+
+    function verifyForm(){
+        let errors = []
+        if(name === "")
+            errors.push("nome")
+        if(email === "")
+            errors.push("e-mail")
+        if(department === "")
+            errors.push("departamento")
+
+        return errors
+    }
+
+    const notify = (message) => toast.warn(`Por favor prencha o campo ${message}`);
 
     function verifyId(){
         let lastMember = props.members.reverse()
@@ -62,6 +93,7 @@ function New(props){
                     <Button value="Cancelar" type="none" onClick={e => handleCancel(e)}/>
                 </div>
             </form>
+            <ToastContainer />
         </div>
     )
 }
