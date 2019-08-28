@@ -5,7 +5,8 @@ import { bindActionCreators } from 'redux'
 import { updateMember } from '../../redux/Members/MemberAction'
 import Input, { Select } from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Edit(props){
 
@@ -16,7 +17,7 @@ function Edit(props){
     const [department, setDepartment] = useState(user ? user.department : "")
     const [access, setAccess] = useState(user ? user.access : "")
 
-    
+    const notify = (message) => toast.warn(`Por favor prencha o campo ${message}`);
     
 
     function handleCancel(e){
@@ -29,6 +30,19 @@ function Edit(props){
 
     function handleForm(e){
         e.preventDefault()
+        let errors = verifyForm()
+        
+        if(errors.length === 0){
+            saveData(name,email,department,access)
+            props.history.push("/")
+        }else{
+            errors.map(error => (
+                notify(error)
+            ))
+        }
+    }
+
+    function saveData(name,email,department,access){
         props.updateMember({
             id: user.id,
             name,
@@ -36,6 +50,19 @@ function Edit(props){
             department,
             access
         })
+    }
+
+
+    function verifyForm(){
+        let errors = []
+        if(name === "")
+            errors.push("nome")
+        if(email === "")
+            errors.push("e-mail")
+        if(department === "")
+            errors.push("departamento")
+
+        return errors
     }
 
     return(
@@ -56,6 +83,7 @@ function Edit(props){
                     <Button value="Atualizar" type="default" onClick={e => handleForm(e)}/>
                     <Button value="Cancelar" type="none" onClick={e => handleCancel(e)}/>
                 </div>
+                <ToastContainer />
             </form>
         :
             <h4>Membro não encontrado</h4>
