@@ -59,4 +59,13 @@
         font-size: 22px;
         font-weight: 100;
     }
+
+    
+}
+
+@media (min-width: 768px) {
+    .card-member{
+        grid-template-columns: 15% 75% 10%;
+    }
+
 }

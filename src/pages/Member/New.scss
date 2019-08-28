@@ -38,3 +38,29 @@
         }
     }
 }
+
+
+@media (min-width: 765px) {
+    .container-new{
+
+        .info{
+            
+            justify-content: center !important;
+
+            h4{
+                text-align: center;
+            }
+        }
+
+        justify-content: center !important;
+
+        form{
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        .actions{
+            grid-template-columns: repeat(2,1fr) !important;
+        }
+    }
+
+}

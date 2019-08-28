@@ -46,3 +46,17 @@
         }
     }
 }
+
+
+@media (min-width: 765px) {
+    .container-main{
+        .actions{
+            grid-template-columns: repeat(2,1fr) !important;
+        }
+
+        .members-list{
+            max-height: 250px !important;
+        }
+    }
+
+}
