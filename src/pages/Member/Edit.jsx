@@ -74,9 +74,9 @@ function Edit(props){
                 <Input value={department} type="text" label="Departamento" holder="ex. Tech" onChange={e => setDepartment(e.target.value)}/>
                 
                 <Select value={access} label="Nível de accesso" onChange={e => setAccess(e.target.value)}>
-                    <option value="user">Usuário</option>
-                    <option value="leitor">Leitor</option>
-                    <option value="admin">Admin</option>
+                    <option value="Usuário">Usuário</option>
+                    <option value="Leitor">Leitor</option>
+                    <option value="Admin">Admin</option>
                 </Select>
 
                 <div className="actions">
