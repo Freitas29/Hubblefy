@@ -14,11 +14,11 @@ function Card(props){
     return(
             <div className="card-member">
                     <Link to={`member/edit/${props.id}`}>
-                        <p className="card-name">{props.name}:</p>
+                        <label className="level-access">{props.access}: </label>
                     </Link>
                     
                     <Link to={`member/edit/${props.id}`}>
-                        <label className="level-access">{props.access}</label>
+                        <p className="card-name">{props.name}</p>
                     </Link>
                 <button onClick={e => remove(props.id)}><label className="close">&times;</label></button>
             </div>

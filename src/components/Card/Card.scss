@@ -9,13 +9,21 @@
     a{
         outline: none;
         text-decoration: none;
-        width: 89%;
+        width: 100%;
     }
-    .card-name{
+
+    a:nth-child(1){
         text-align: end;
-        color: #646464 !important;
+    }
+
+    a:nth-child(2){
+        margin-left: 5%;
+        text-align: start;
+    }
+
+    .card-name{
         font-size: 16px !important;
-        font-weight: bold !important;
+        color: #7a7774 !important;
     }
 
     p{
@@ -24,8 +32,10 @@
     }
 
     .level-access{
-        font-size: 14px !important;
-        color: #7a7774 !important;
+        text-align: end;
+        color: #646464 !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
     }
 
     button{

@@ -13,7 +13,7 @@ function Main(props){
         <div className="container-main">
             <div className="info">
                 <h4>Membros da Org</h4>
-                <p>Chegou a hora de adicionar os <br/>
+                <p>Chegou a hora de adicionar os 
                     primeiros membros da sua nova org:
                 </p>
 
