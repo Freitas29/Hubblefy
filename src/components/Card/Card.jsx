@@ -12,13 +12,16 @@ function Card(props){
     }
 
     return(
-        <Link to={`member/edit/${props.id}`}>
             <div className="card-member">
-                <p className="card-name">{props.name}:</p>
-                <label className="level-access">{props.access}</label>
+                    <Link to={`member/edit/${props.id}`}>
+                        <p className="card-name">{props.name}:</p>
+                    </Link>
+                    
+                    <Link to={`member/edit/${props.id}`}>
+                        <label className="level-access">{props.access}</label>
+                    </Link>
                 <button onClick={e => remove(props.id)}><label className="close">&times;</label></button>
             </div>
-        </Link>
     )
 }
 
